@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultório OlíviaGaGa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2E003E; /* Roxo escuro */
+            color: #D8B2D1; /* Lilás claro */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5E2A8C; /* Roxo médio */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        form {
+            background-color: #3E1A56; /* Roxo mais escuro */
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-size: 18px;
+            color: #D8B2D1; /* Lilás claro */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #5E2A8C; /* Roxo médio */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #7A4B92; /* Roxo suave */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9B5AA3; /* Roxo claro */
+        }
+
+        #mensagemConfirmar {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        footer {
+            background-color: #2E003E; /* Roxo escuro */
+            color: #D8B2D1; /* Lilás claro */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Consultório OliviaGaga
+</h1>
+    </header>
+
+    <form id="sintomaForm">
+        <label for="sintoma">Selecion
+        <label for="sintoma">Selecione seu sintoma:</label>
+        <select id="sintoma" name="sintoma" required>
+            <option value="">Selecione...</option>
+            <option value="falta de dar">febre</option>
+            <option value="falta de assistir barbie">Dor de Cabeça</option>
+            <option value="anda sendo uma pessoa muito falsa">Tosse</option>
+            <option value="preguiça">fadiga</option>
+            <option value="tubercolose">Dificuldade Respiratória</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="mensagemConfirmar"></div>
+
+    <footer>
+        <p>&copy; 2025 Consultório OlíviaGaGa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('sintomaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var sintoma = document.getElementById('sintoma').value;
+            var mensagemConfirmar = document.getElementById('mensagemConfirmar');
+
+            if (sintoma) {
+                mensagemConfirmar.textContent = 'Sintoma selecionado: ' + sintoma;
+            } else {
+                mensagemConfirmar.textContent = 'Por favor, selecione um sintoma.';
+            }
+        });
+
+    </script>
+</body>
+
+</html>
